@@ -6,11 +6,11 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:24:44 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/26 17:28:00 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/26 18:05:05 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 /*
 Returns 1 if the supplied string can be converted to a valid

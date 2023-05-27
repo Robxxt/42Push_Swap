@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_list.h                                      :+:      :+:    :+:   */
+/*   is_unique.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 21:29:53 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/27 08:28:50 by rdragan          ###   ########.fr       */
+/*   Created: 2023/05/27 08:30:12 by rdragan           #+#    #+#             */
+/*   Updated: 2023/05/27 08:31:46 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LINKED_LIST_H
-# define LINKED_LIST_H
+#include "../../includes/push_swap.h"
 
-# include <stdlib.h>
+/*
+Validates if the list is composed only of uniq numbers.
+Returns 1 on succeed & 0 on failure.
+*/
+int	is_unique(int *list, int size)
+{
+	int	i;
+	int	j;
 
-typedef struct s_node {
-	int				data;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
-
-typedef struct s_stack {
-	t_node	*head;
-	t_node	*tail;
-	int		length;
-	int		instructions;
-}	t_stack;
-
-t_node	*create_node(int data);
-t_node	*insert_to_end(t_node **last_node, int data);
-t_node	*insert_to_start(t_node **first_node, int data);
-
-#endif
+	i = -1;
+	while (list[++i])
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (list[i] == list[j])
+				return (0);
+			j++;
+		}
+	}
+	return (1);
+}
