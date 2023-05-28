@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:20:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 11:57:58 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/28 12:09:29 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,9 @@ int		list_size(char **argv);
 int		*get_list(char **argv, int size);
 t_stack	*init_stack(void);
 void	free_stack(t_stack *stack);
+void	rotate(t_stack *stack, int is_a);
+void	reverse_rotate(t_stack *stack, int is_a);
+void	swap(t_stack *stack, int is_a);
+void	push(t_stack *a, t_stack *b, int from_a);
 
 #endif
