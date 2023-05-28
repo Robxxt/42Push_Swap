@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 11:48:07 by rdragan          ###   ########.fr       */
+/*   Created: 2023/05/28 11:48:32 by rdragan           #+#    #+#             */
+/*   Updated: 2023/05/28 11:48:48 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	reset_color(void)
+void	print_stack(t_stack stack, int is_stack_a)
 {
-	ft_printf(1, "\e[0;37m");
-}
+	t_node	*tmp;
 
-void	terminate(char *msg)
-{
-	ft_printf(2, "%sError: %s\n", RED, msg);
-	exit(1);
-}
-
-int main(int argc, char *argv[])
-{
-	t_stack	*stack_a;
-
-	test();
-	stack_a = get_main_stack(argc, argv);
-	print_stack(*stack_a, 1);
-	return (0);
+	tmp = stack.head;
+	if (!tmp)
+		return ;
+	ft_printf(1, "\n");
+	if (is_stack_a == 1)
+		ft_printf(1, "STACK A:\n");
+	else
+		ft_printf(1, "STACK B:\n");
+	while (tmp)
+	{
+		ft_printf(1, "index: %d\tcurr: %p\tprev: %p\tnext: %p\n",
+			tmp->data, tmp, tmp->prev, tmp->next);
+		tmp = tmp->prev;
+	}
 }
