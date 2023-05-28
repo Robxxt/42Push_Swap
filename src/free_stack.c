@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 12:02:20 by rdragan          ###   ########.fr       */
+/*   Created: 2023/05/28 11:57:34 by rdragan           #+#    #+#             */
+/*   Updated: 2023/05/28 11:57:51 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	reset_color(void)
+void	free_stack(t_stack *stack)
 {
-	ft_printf(1, "\e[0;37m");
-}
+	t_node	*last;
+	t_node	*prev;
 
-void	terminate(char *msg)
-{
-	ft_printf(2, "%sError: %s\n", RED, msg);
-	exit(1);
-}
-
-int main(int argc, char *argv[])
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	test();
-	stack_a = get_main_stack(argc, argv);
-	stack_b = init_stack();
-	print_stack(*stack_a, 1);
-	print_stack(*stack_b, 0);
-	free_stack(stack_a);
-	free_stack(stack_b);
-	return (0);
+	last = stack->head;
+	prev = last;
+	while (prev)
+	{
+		last = prev->prev;
+		free(prev);
+		prev = last;
+	}
+	free(stack);
 }

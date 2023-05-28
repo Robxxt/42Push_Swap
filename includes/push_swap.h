@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:20:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 11:50:55 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/28 11:57:58 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ t_stack	*get_main_stack(int argc, char **argv);
 int		list_size(char **argv);
 int		*get_list(char **argv, int size);
 t_stack	*init_stack(void);
+void	free_stack(t_stack *stack);
 
 #endif
