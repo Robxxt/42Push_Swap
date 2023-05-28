@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 08:32:27 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/27 09:25:16 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/28 11:38:05 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	test_is_unique(void)
 	int	list5[] = {-1};
 	int	list6[] = {0};
 
-	ft_printf(1, "%stest_is_valid_int\n", YELLOW);
+	ft_printf(1, "%stest_is_unique\n", YELLOW);
 	
 	passed_tests += assert_equal_int(is_unique(list1, sizeof(list1) / sizeof(int)), 1);
 	passed_tests += assert_equal_int(is_unique(list2, sizeof(list2) / sizeof(int)), 0);

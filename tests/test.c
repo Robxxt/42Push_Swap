@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:30:30 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/27 09:30:48 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/27 10:29:03 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	test(void)
 	passed_tests += test_is_valid_int();
 	passed_tests += test_is_unique();
 	passed_tests += test_is_sorted();
+	passed_tests += test_list_size();
+	passed_tests += test_get_list();
 }
