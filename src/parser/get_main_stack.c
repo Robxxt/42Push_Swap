@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 09:35:27 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 11:46:01 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/28 11:50:32 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,6 @@ int	get_index(int *arr, int size, int n)
 		i++;
 	}
 	return (pos);
-}
-
-t_stack	*init_stack(void)
-{
-	t_stack	*new;
-
-	new = (t_stack *)malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->head = NULL;
-	new->tail = NULL;
-	new->length = 0;
-	new->instructions = 0;
-	return (new);
 }
 
 /*
