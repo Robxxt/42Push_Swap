@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 13:06:09 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 09:57:07 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/29 13:00:10 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 Sorts a stack composed of three nodes.
 @param *stack: pointer to stack.
-@param mid_index: the second biggest value.
+@param mid_index: the medium index.
 */
 void	sort3(t_stack *stack, int mid_index)
 {

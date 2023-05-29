@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:20:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 11:34:54 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/29 12:59:47 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ void	push(t_stack *a, t_stack *b, int from_a);
 int		stack_is_sorted(t_stack *stack);
 void	sort(t_stack *stack_a, t_stack *stack_b);
 void	sort3(t_stack *stack, int mid_index);
-void	sort5(t_stack *stack_a, t_stack *stack_b);
+void	sort5(t_stack *stack_a, t_stack *stack_b, int mid_index);
 
 #endif
