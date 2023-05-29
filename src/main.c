@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 12:56:45 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/29 12:57:40 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
 		terminate("You failed at least one test!");
 	stack_a = get_main_stack(argc, argv);
 	stack_b = init_stack();
-	instructions = stack_a->instructions + stack_b->instructions;
 	sort(stack_a, stack_b);
+	instructions = stack_a->instructions + stack_b->instructions;
 	ft_printf(1, "> Total instructions: %d\t a: %d\t b: %d\n", instructions, stack_a->instructions, stack_b->instructions);
 	print_stack(*stack_a, 1);
 	print_stack(*stack_b, 0);
