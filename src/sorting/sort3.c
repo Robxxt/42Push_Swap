@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   sort3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 09:27:05 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 10:21:27 by rdragan          ###   ########.fr       */
+/*   Created: 2023/05/28 13:06:09 by rdragan           #+#    #+#             */
+/*   Updated: 2023/05/29 09:57:07 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /*
-Returns 1 if the list is sorted & 0 otherwise.
+Sorts a stack composed of three nodes.
+@param *stack: pointer to stack.
+@param mid_index: the second biggest value.
 */
-int	is_sorted(int *list, int size)
+void	sort3(t_stack *stack, int mid_index)
 {
-	int	i;
-	int	j;
-
-	i = -1;
-	while (++i < size)
+	while (stack_is_sorted(stack) == 0)
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (list[i] > list[j])
-				return (0);
-			j++;
-		}
+		if (stack->head->data == mid_index)
+			swap(stack, 1);
+		else
+			rotate(stack, 1);
 	}
-	return (1);
 }

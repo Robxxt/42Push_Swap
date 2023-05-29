@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 00:08:06 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 12:09:52 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/28 13:13:43 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	reverse_rotate(t_stack *stack, int is_a)
 {
 	t_node	*tmp1;
 
+	stack->instructions++;
 	if (is_a == 1)
 		ft_printf(1, "rra\n");
 	else
@@ -33,6 +34,7 @@ void	rotate(t_stack *stack, int is_a)
 	t_node	*tmp1;
 	t_node	*tmp2;
 
+	stack->instructions++;
 	if (is_a == 1)
 		ft_printf(1, "ra\n");
 	else

@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:46:12 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 12:10:40 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/29 09:23:54 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	push_from_to(t_stack *first_stack, t_stack *second_stack)
 
 void	push(t_stack *a, t_stack *b, int from_a)
 {
+	a->instructions++;
 	if (from_a == 1)
 	{
 		if (a->length == 0)

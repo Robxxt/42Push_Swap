@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 23:38:38 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 12:09:58 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/28 13:13:48 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	swap(t_stack *stack, int is_a)
 	t_node	*head;
 	t_node	*sub_head;
 
+	stack->instructions++;
 	if (is_a == 1)
 		ft_printf(1, "sa\n");
 	else

@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:30:30 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/27 10:29:03 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/29 12:44:10 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	test_msg(int total_tests, int passed_tests)
 	reset_color();
 }
 
-void	test(void)
+int	test(void)
 {
+	int	total_tests = 6;
 	int	passed_tests = 0;
 	
 	passed_tests += test_is_valid_int();
@@ -30,4 +31,8 @@ void	test(void)
 	passed_tests += test_is_sorted();
 	passed_tests += test_list_size();
 	passed_tests += test_get_list();
+	passed_tests += test_sort3();
+	// passed_tests += test_sort5();
+
+	return (passed_tests == total_tests);
 }

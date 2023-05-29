@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:20:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/28 12:09:29 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/29 11:34:54 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../lib/libft/libft.h"
 # include "../lib/linked_list/linked_list.h"
+# include <fcntl.h>
 
 # define RED "\e[1;31m"
 # define GREEN "\e[1;32m"
@@ -24,7 +25,7 @@
 /*
 Tests
 */
-void	test(void);
+int		test(void);
 void 	reset_color(void);
 void	fail(void);
 void	pass(void);
@@ -37,6 +38,8 @@ int		test_is_unique(void);
 int		test_is_sorted(void);
 int		test_list_size(void);
 int		test_get_list(void);
+int		test_sort3(void);
+int		test_sort5(void);
 
 /*
 Project
@@ -56,5 +59,9 @@ void	rotate(t_stack *stack, int is_a);
 void	reverse_rotate(t_stack *stack, int is_a);
 void	swap(t_stack *stack, int is_a);
 void	push(t_stack *a, t_stack *b, int from_a);
+int		stack_is_sorted(t_stack *stack);
+void	sort(t_stack *stack_a, t_stack *stack_b);
+void	sort3(t_stack *stack, int mid_index);
+void	sort5(t_stack *stack_a, t_stack *stack_b);
 
 #endif

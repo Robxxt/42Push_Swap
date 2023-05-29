@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   stack_is_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/27 09:27:05 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 10:21:27 by rdragan          ###   ########.fr       */
+/*   Created: 2023/05/28 12:49:27 by rdragan           #+#    #+#             */
+/*   Updated: 2023/05/28 17:49:55 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 /*
-Returns 1 if the list is sorted & 0 otherwise.
+Returns 1 if stack is sorted. Otherwise returns 0.
 */
-int	is_sorted(int *list, int size)
+int	stack_is_sorted(t_stack *stack)
 {
-	int	i;
-	int	j;
+	t_node	*tmp;
 
-	i = -1;
-	while (++i < size)
+	tmp = stack->tail;
+	while (tmp && tmp->next)
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (list[i] > list[j])
-				return (0);
-			j++;
-		}
+		if (tmp->data < tmp->next->data)
+			return (0);
+		tmp = tmp->next;
 	}
 	return (1);
 }
