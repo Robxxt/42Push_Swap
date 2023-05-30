@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:31:38 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 12:38:53 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:21:24 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int	test_sort5(void)
 	ft_printf(1, "%stest_sort5\n", YELLOW);
 	
 	dup2(devNull, 1);
-	sort5(s1_a, s1_b);
-	sort5(s2_a, s2_b);
-	sort5(s3_a, s3_b);
-	sort5(s5_a, s5_b);
-	sort5(s6_a, s6_b);
-	sort5(s7_a, s7_b);
+	sort5(s1_a, s1_b, 2);
+	sort5(s2_a, s2_b, 2);
+	sort5(s3_a, s3_b, 2);
+	sort5(s5_a, s5_b, 2);
+	sort5(s6_a, s6_b, 2);
+	sort5(s7_a, s7_b, 2);
 	dup2(std_out, 1);
 	passed_tests += assert_equal_int(stack_is_sorted(s1_a), 1);
 	passed_tests += assert_equal_int(stack_is_sorted(s2_a), 1);
