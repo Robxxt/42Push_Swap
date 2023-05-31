@@ -6,26 +6,79 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 17:22:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/30 15:24:33 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/31 15:38:34 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	get_max_in_stack(t_stack *stack)
+/*
+Returns the amount of bits that compose a number.
+If the number is 0 it returns 1;
+*/
+int	get_bits(unsigned int n)
 {
-	int		max;
-	t_node	*tmp;
+	int	bits;
 
-	tmp = stack->head;
-	max = tmp->data;
-	while (tmp)
+	if (n == 0)
+		return (1);
+	bits = 0;
+	while (n)
 	{
-		if (max < tmp->data)	
-			max = tmp->data;
-		tmp = tmp->prev;
+		n /= 2;
+		bits++;
 	}
-	return (max);
+	return (bits);
+}
+
+/*
+Makes stack_a to be composed by the 3 biggest numbers
+and pushes the rest to stack_b
+*/
+void	get_max_3(t_stack *stack_a, t_stack *stack_b)
+{
+	int	max;
+	max = stack_a->length;
+
+	while (stack_a->length > 3)
+	{
+		if (stack_a->head->data < max - 3)
+			push(stack_a, stack_b, 1);
+		else
+			rotate(stack_a, 1);
+	}
+}
+
+/*
+Returns 1 if the stack is sorted with 1 number of difference between
+each node.
+*/
+int	stack_is_consecutive_sorted(t_stack *stack)
+{
+	t_node	*tmp_node;
+
+	tmp_node = stack->head;
+	while (tmp_node->prev)
+	{
+		if (tmp_node->prev->data != tmp_node->data + 1)
+			return (0);
+		tmp_node = tmp_node->prev;
+	}
+	return (1);
+}
+
+int	stack_is_consecutive_inverse_sorted(t_stack *stack)
+{
+	t_node	*tmp_node;
+
+	tmp_node = stack->head;
+	while (tmp_node->prev)
+	{
+		if (tmp_node->prev->data != tmp_node->data - 1)
+			return (0);
+		tmp_node = tmp_node->prev;
+	}
+	return (1);
 }
 
 /*
@@ -33,36 +86,31 @@ Sorts a stack composed of three nodes.
 @param *stack_a: pointer to stack_a.
 @param *stack_b: pointer to stack_a.
 */
-void	sort_up_to50(t_stack *stack_a, t_stack *stack_b)
+void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	int	length;
-	int	max_in_stack_b;
+	int	len;
+	int	i;
+	int	j;
+	int	max_bits;
 
-	length = stack_a->length;
-	while (stack_is_sorted(stack_a) == 0)
+	len = stack_a->length;
+	max_bits = get_bits(len);
+	i = -1;
+	while (++i < max_bits)
 	{
-		while (stack_a->length > 3)
+		j = -1;
+		while (++j < len)
 		{
-			if (stack_a->head->data < length - 3)
-				push(stack_a, stack_b, 1);
-			else
+			if (stack_a->head->data >> i & 1)
+			{
 				rotate(stack_a, 1);
-		}
-		if (stack_is_sorted(stack_a) == 0)
-			sort3(stack_a, length - 2);
-		while (stack_b->length > 1)
-		{
-			max_in_stack_b = get_max_in_stack(stack_b);
-			if (stack_b->head->data < stack_b->head->prev->data)
-				swap(stack_b, 0);
-			if (stack_b->head->data < max_in_stack_b / 2)
-				rotate(stack_b, 0);
+				if (stack_is_sorted(stack_a))
+					break ;
+			}
 			else
-				push(stack_a, stack_b, 0);
+				push(stack_a, stack_b, 1);
 		}
+		while (stack_b->head)
+			push(stack_a, stack_b, 0);
 	}
-	if (stack_b->head->data < stack_b->tail->data)
-		swap(stack_b, 0);
-	push(stack_a, stack_b, 0);
-	push(stack_a, stack_b, 0);
 }

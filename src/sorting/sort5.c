@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 17:56:12 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 13:00:48 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/30 19:48:41 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sort5(t_stack *stack_a, t_stack *stack_b, int mid_index)
 	}
 	if (stack_is_sorted(stack_a) == 0)
 		sort3(stack_a, 2);
-	if (stack_b->head->data < stack_b->tail->data)
+	if (stack_b->head->data < stack_b->head->prev->data)
 		swap(stack_b, 0);
 	push(stack_a, stack_b, 0);
 	push(stack_a, stack_b, 0);
