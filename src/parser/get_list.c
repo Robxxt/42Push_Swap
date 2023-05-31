@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 09:49:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/27 10:29:30 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/31 17:04:49 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	*get_list(char **argv, int size)
 	}
 	return (list);
 }
-

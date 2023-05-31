@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 09:35:27 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/29 11:19:40 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/31 17:05:39 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,9 @@ t_stack	*get_main_stack(int argc, char **argv)
 {
 	int		*tmp_list;
 	int		list_length;
-	t_stack	*stack_a = NULL;
-	
+	t_stack	*stack_a;
+
+	stack_a = NULL;
 	if (validate_int_input(argc, argv) == 0)
 		terminate("The input must be composed only by integers!");
 	list_length = list_size(argv);

@@ -6,16 +6,11 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/31 16:49:06 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/31 17:04:35 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	reset_color(void)
-{
-	ft_printf(1, "\e[0;37m");
-}
 
 void	terminate(char *msg)
 {
@@ -23,7 +18,7 @@ void	terminate(char *msg)
 	exit(1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;

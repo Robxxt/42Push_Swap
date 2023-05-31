@@ -6,7 +6,7 @@
 #    By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:16:46 by rdragan           #+#    #+#              #
-#    Updated: 2023/05/31 16:48:42 by rdragan          ###   ########.fr        #
+#    Updated: 2023/05/31 17:07:19 by rdragan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME		:=	push_swap
 LIBFT		:=	lib/libft
 SRC			:=	$(wildcard src/*.c)
 SRC			+=	$(wildcard src/*/*.c)
-SRC			+=	$(wildcard tests/*.c)
 SRC			+=	$(wildcard instructions/*.c)
 OBJ			:=	$(SRC:.c=.o)
 LINKED_LIST	:=	lib/linked_list
