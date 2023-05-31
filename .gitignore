@@ -1,3 +1,8 @@
+data
+head-
+imgui.ini
+push_swap_visualizer/
+
 # Prerequisites
 *.d
 

@@ -6,7 +6,7 @@
 #    By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:16:46 by rdragan           #+#    #+#              #
-#    Updated: 2023/05/28 13:22:20 by rdragan          ###   ########.fr        #
+#    Updated: 2023/05/31 16:48:42 by rdragan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ debug: fclean build_linked_list build_libft $(OBJ)
 	@cc $(CFLAGS) -g $(LIBFT)/libft.a $(LINKED_LIST)/linked_list.a $(OBJ) -o $(NAME)_debug
 
 build_libft: $(LIBFT)
-	@make -C $(LIBFT)
+	@make -C $(LIBFT) >/dev/null
 
 build_linked_list: $(LINKED_LIST)
-	@make -C $(LINKED_LIST)
+	@make -C $(LINKED_LIST) >/dev/null
 
 clean:
 	@rm -f $(OBJ) main.o

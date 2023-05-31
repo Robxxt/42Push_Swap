@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/31 15:39:05 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:49:06 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,10 @@ int main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		instructions;
 
 	stack_a = get_main_stack(argc, argv);
 	stack_b = init_stack();
 	sort(stack_a, stack_b);
-	instructions = stack_a->instructions + stack_b->instructions;
-	// ft_printf(1, "> Total instructions: %d\t a: %d\t b: %d\n", instructions, stack_a->instructions, stack_b->instructions);
-	// print_stack(*stack_a, 1);
-	// print_stack(*stack_b, 0);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
