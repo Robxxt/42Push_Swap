@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:20:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/31 17:04:21 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/05/31 17:16:15 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include <fcntl.h>
 
 # define RED "\e[1;31m"
-# define GREEN "\e[1;32m"
-# define WHITE "\e[1;37m"
-# define YELLOW "\e[1;33m"
 
 int		is_valid_int(char *str);
 void	terminate(char *msg);
@@ -43,6 +40,6 @@ void	sort3(t_stack *stack, int mid_index);
 void	sort5(t_stack *stack_a, t_stack *stack_b, int mid_index);
 void	sort_up_to50(t_stack *stack_a, t_stack *stack_b);
 int		get_max_in_stack(t_stack *stack);
-void	radix_sort(t_stack *stack_a,t_stack *stack_b);
+void	radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif
