@@ -6,7 +6,7 @@
 #    By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:16:46 by rdragan           #+#    #+#              #
-#    Updated: 2023/05/31 17:07:19 by rdragan          ###   ########.fr        #
+#    Updated: 2023/06/01 16:45:50 by rdragan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,10 @@ CFLAGS		:=	-Wall -Wextra -Werror
 all: build_linked_list build_libft $(OBJ)
 	@cc $(CFLAGS) $(LIBFT)/libft.a $(LINKED_LIST)/linked_list.a $(OBJ) -o $(NAME)
 
+debug: CFLAGS += -g
+
 debug: fclean build_linked_list build_libft $(OBJ)
-	@cc $(CFLAGS) -g $(LIBFT)/libft.a $(LINKED_LIST)/linked_list.a $(OBJ) -o $(NAME)_debug
+	@cc $(CFLAGS) $(LIBFT)/libft.a $(LINKED_LIST)/linked_list.a $(OBJ) -o $(NAME)_debug
 
 build_libft: $(LIBFT)
 	@make -C $(LIBFT) >/dev/null
@@ -45,5 +47,8 @@ fclean: clean
 	@rm -f $(NAME)_debug
 
 re: fclean all
+
+san: CFLAGS += -fsanitize=address -g
+san: all
 
 .PHONY: all, build_libft, build_linked_list, clean, fclean, test

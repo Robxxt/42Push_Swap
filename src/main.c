@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/31 17:04:35 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/06/01 17:00:53 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	main(int argc, char *argv[])
 	stack_a = get_main_stack(argc, argv);
 	stack_b = init_stack();
 	sort(stack_a, stack_b);
+	print_stack(*stack_a, 1);
 	free_stack(stack_a);
+	stack_a = NULL;
 	free_stack(stack_b);
+	stack_b = NULL;
 	return (0);
 }

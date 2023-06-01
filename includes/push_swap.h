@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:20:10 by rdragan           #+#    #+#             */
-/*   Updated: 2023/05/31 17:16:15 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/06/01 11:33:01 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	sort5(t_stack *stack_a, t_stack *stack_b, int mid_index);
 void	sort_up_to50(t_stack *stack_a, t_stack *stack_b);
 int		get_max_in_stack(t_stack *stack);
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+void	print_stack(t_stack stack, int is_stack_a);
 
 #endif
