@@ -6,7 +6,7 @@
 #    By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:16:46 by rdragan           #+#    #+#              #
-#    Updated: 2023/06/01 16:45:50 by rdragan          ###   ########.fr        #
+#    Updated: 2023/06/01 17:16:17 by rdragan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,5 @@ fclean: clean
 	@rm -f $(NAME)_debug
 
 re: fclean all
-
-san: CFLAGS += -fsanitize=address -g
-san: all
 
 .PHONY: all, build_libft, build_linked_list, clean, fclean, test

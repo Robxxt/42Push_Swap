@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:15:55 by rdragan           #+#    #+#             */
-/*   Updated: 2023/06/01 17:12:48 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/06/01 23:00:34 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int argc, char *argv[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	if (argc < 2)
+		return (0);
 	stack_a = get_main_stack(argc, argv);
 	stack_b = init_stack();
 	sort(stack_a, stack_b);
