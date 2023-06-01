@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:46:12 by rdragan           #+#    #+#             */
-/*   Updated: 2023/06/01 17:06:50 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/06/01 17:08:28 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void	set_stack_to_null(t_stack *stack)
 	stack->tail = NULL;
 }
 
+/*
+Inserts to the endo of the stack & frees the tmp_stack
+*/
 void	tmp_insert(t_stack *stack, t_node *tmp)
 {
 	t_node	*tmp_stack;
