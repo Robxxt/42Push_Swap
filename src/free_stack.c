@@ -6,7 +6,7 @@
 /*   By: rdragan <rdragan@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 11:57:34 by rdragan           #+#    #+#             */
-/*   Updated: 2023/06/01 17:13:01 by rdragan          ###   ########.fr       */
+/*   Updated: 2023/06/04 12:11:55 by rdragan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ void	free_stack(t_stack *stack)
 {
 	t_node	*curr;
 	t_node	*last;
+	int		init_len;
+	int		i;
 
+	init_len = stack->length;
 	curr = NULL;
+	i = -1;
 	if (stack && stack->tail)
 		curr = stack->tail;
-	while (curr)
+	while (++i < init_len)
 	{
 		last = curr->next;
 		free(curr);
 		curr = last;
 	}
-	free(stack);
+	if (stack)
+		free(stack);
 }
